@@ -45,5 +45,9 @@ This branch is 1 commits ahead of Milk377:main.
 ```
 글자와 우측에 contribute 버튼이 보일겁니다. 
 contribute를 누르면 Milk377:main 이라는 저희 메인 저장소에 pull request할 수 있는 기능이 나옵니다.
+#### 11. 자신의 repository를 로컬 컴퓨터에 반영시키고싶다면
+```
+git pull upstream main
+```
 
 
