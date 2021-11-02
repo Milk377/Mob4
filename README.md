@@ -38,13 +38,12 @@ push가 진행이 잘되었으면 git에 접속시 본인계정의 git repositor
 ```
 Compare & pull request  	(버튼이 활성화)
 ```
+#### 10. 공동 작업결과물인 메인 저장소에 pull request 하려면?
+자신의 저장소에 pull request해서 반영이 잘되었다면
+```
+This branch is 1 commits ahead of Milk377:main.
+```
+글자와 우측에 contribute 버튼이 보일겁니다. 
+contribute를 누르면 Milk377:main 이라는 저희 메인 저장소에 pull request할 수 있는 기능이 나옵니다.
 
-
-
-
-	
-->git remote add upstream <fork해온 내 레포지토리의 주소> -> git remote -v 로 저장소 목록 확인
--> master에 바로 push 하기 이전에 자신의 로컬 컴퓨터에서 테스트를 해보는게 좋기 때문에 branch 생성
--> git checkout -b sungrae     (sungrae는 각자 이름으로)
--> git branch로 브랜치 확인
 
