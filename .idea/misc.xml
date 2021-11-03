@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/drawable/ic_home.xml" value="0.27384615384615385" />
+        <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/drawable/splash_background.xml" value="0.28072916666666664" />
         <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/layout/activity_main.xml" value="0.17446808510638298" />
         <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/layout/activity_start.xml" value="0.13486842105263158" />
-        <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/layout/fragment_home.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/layout/fragment_home.xml" value="0.21818181061547676" />
         <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/layout/fragment_setting.xml" value="0.1" />
         <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/layout/fragment_storage.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/layout/test.xml" value="0.2635416666666667" />
         <entry key="..\:/Users/82102/Desktop/mobileTeam/Git-fetch/Mob4/app/src/main/res/menu/menu.xml" value="0.30520833333333336" />
       </map>
     </option>
