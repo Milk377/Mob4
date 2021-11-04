@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,35 +9,36 @@
     <View
         android:id="@+id/divider"
         android:layout_width="409dp"
-        android:layout_height="5dp"
-        android:background="#BB000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="345dp"
+        android:layout_marginEnd="1dp"
+        android:background="#CC000000" />
 
     <Button
         android:id="@+id/button_horizontal"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_below="@+id/divider"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="84dp"
-        android:text="가로"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
+        android:text="가로" />
 
     <Button
         android:id="@+id/button_vertical"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_below="@+id/divider"
-        android:layout_marginTop="84dp"
-        android:text="세로"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
-        app:layout_constraintStart_toEndOf="@+id/button_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:text="세로" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
