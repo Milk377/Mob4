@@ -35,7 +35,7 @@ public class FragmentHome extends Fragment implements View.OnTouchListener{
 
     //xml에서 버튼들이 View를 따라 움직이는거는 구현했으나 실제 기기에서는 움직이질 않음
     // -> View onTouch리스너 기능 속에 버튼의 좌표도 같이 움직이게끔하면 해결할 수 있지 않을까
-
+    // 구현성공
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         int height = ((ViewGroup) v.getParent()).getHeight() - v.getHeight();
