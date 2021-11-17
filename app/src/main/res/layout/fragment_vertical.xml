@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -65,11 +66,23 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="25dp"
-        android:inputType="text"
         android:background="@color/white"
+        android:hint="memo"
+        android:inputType="text"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/SaveMemo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/divider"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="39dp"
         android:visibility="invisible"
-        android:hint="memo" />
+        app:srcCompat="@drawable/ic_baseline_save" />
 
 </RelativeLayout>

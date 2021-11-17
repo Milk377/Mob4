@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,7 +23,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity{
 
-
+    //zoom 실행시키는 변수들
+    private Intent intent;
+    private final String zoomPackage = "us.zoom.videomeetings";
 
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private FragmentHome fragmentHome = new FragmentHome();
@@ -43,8 +46,17 @@ public class MainActivity extends AppCompatActivity{
         BottomNavigationView BNView = findViewById(R.id.navigationView);
         BNView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
 
-
-
+        /* 버튼을 누르면 zoom을 실행시키는 기능이었으나 zoommate 어플 내에서 켜지는게 아닌 새로운 zoom어플로서 켜지기때문에 x
+        intent = this.getPackageManager().getLaunchIntentForPackage(zoomPackage);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Button button = (Button) findViewById(R.id.zoom_start);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        */
     }
     //Fragment 내부에서 Fragment를 전환할 때 사용할 메소드
     public void replaceFragment(Fragment fragment){
