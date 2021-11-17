@@ -3,6 +3,10 @@
     package="com.application.mob4git">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- zoom 실행 추가부분 -->
+    <queries>
+        <package android:name="us.zoom.videomeetings"/>
+    </queries>
 
     <application
         android:allowBackup="true"
