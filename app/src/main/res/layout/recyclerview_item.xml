@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginBottom="5dp">
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/round2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bg_in"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/round"
+        app:layout_constraintLeft_toLeftOf="@id/bg"
+        app:layout_constraintTop_toTopOf="@id/bg"
+        app:layout_constraintBottom_toBottomOf="@id/bg"/>
+
+    <TextView
+        android:id="@+id/textView_1"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/bg_in"
+        app:layout_constraintTop_toTopOf="@id/bg_in"
+        app:layout_constraintBottom_toBottomOf="@id/bg_in"/>
+
+    <TextView
+        android:id="@+id/textView_2"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:text="TextView"
+        app:layout_constraintTop_toTopOf="@id/bg"
+        app:layout_constraintBottom_toBottomOf="@id/bg"
+        app:layout_constraintRight_toRightOf="@id/bg"
+        android:background="@drawable/round3"
+        android:textColor="@color/white"
+        android:layout_marginRight="20dp"
+        android:gravity="center"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
