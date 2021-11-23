@@ -6,6 +6,18 @@
     android:layout_height="40dp"
     android:layout_marginBottom="5dp">
 
+
+    <TextView
+        android:id="@+id/key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bg_in"
+        app:layout_constraintStart_toStartOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
     <View
         android:id="@+id/bg"
         android:layout_width="wrap_content"
@@ -15,17 +27,18 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <View
         android:id="@+id/bg_in"
         android:layout_width="210dp"
         android:layout_height="30dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
-        android:layout_marginLeft="10dp"
         android:background="@drawable/round"
+        app:layout_constraintBottom_toBottomOf="@id/bg"
         app:layout_constraintLeft_toLeftOf="@id/bg"
-        app:layout_constraintTop_toTopOf="@id/bg"
-        app:layout_constraintBottom_toBottomOf="@id/bg"/>
+        app:layout_constraintTop_toTopOf="@id/bg" />
 
     <TextView
         android:id="@+id/textView_1"
