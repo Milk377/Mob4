@@ -3,10 +3,7 @@
     package="com.application.mob4git">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <!-- zoom 실행 추가부분 -->
-    <queries>
-        <package android:name="us.zoom.videomeetings"/>
-    </queries>
+
 
     <application
         android:allowBackup="true"
@@ -33,6 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".StorageActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".MemoActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
     </application>
 
 </manifest>

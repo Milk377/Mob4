@@ -27,29 +27,23 @@ public class FragmentStorage extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mainView = inflater.inflate(R.layout.fragment_storage, container, false);
 
+        /*
         addItem("이번강의의 내용은", "15:55");
         addItem("모바일프로그래밍 4주차", "21:17");
         addItem("데이터프레임 강좌", "10:44");
         addItem("교수님 설명 내용 메모", "42:10");
-
-        // 리사이클러뷰에 LinearLayoutManager 객체 지정.
-        RecyclerView recyclerView = mainView.findViewById(R.id.storage_recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        // 리사이클러뷰에 SimpleTextAdapter 객체 지정.
-        Storage_Adapter adapter = new Storage_Adapter(getActivity(), mList) ;
-        recyclerView.setAdapter(adapter) ;
+*/
 
         return mainView;
     }
 
-
-    public void addItem(String title, String time){
+/*
+    public void addItem(String text, String title){
         RecyclerItem item = new RecyclerItem();
 
+        item.setText(text);
         item.setTitle(title);
-        item.setTime(time);
 
         mList.add(item);
-    }
+    }*/
 }

@@ -2,6 +2,7 @@ package com.application.mob4git;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -48,6 +49,9 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
     EditText editText_1;
     ImageView saveMemo;
 
+    private AppDatabase db;
+
+
 
     public static VerticalModeFragment newInstance(){
         return new VerticalModeFragment();
@@ -67,6 +71,7 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
         editText_1 = mainView.findViewById(R.id.editText_1);
         saveMemo = mainView.findViewById(R.id.SaveMemo);
 
+
         //webView 설정들
         webView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView.getSettings();
@@ -79,6 +84,9 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
         divider.setOnTouchListener(this);
         divider.bringToFront();
 
+
+        //db
+        db = AppDatabase.getInstance(getActivity());
 
         button_1.setOnClickListener(view ->{
             editText_1.setVisibility(View.VISIBLE);
@@ -105,6 +113,12 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
                 public void onClick(DialogInterface dialog, int id) {
                     Toast.makeText(getActivity(), "저장되었습니다", Toast.LENGTH_SHORT).show();
 
+                    String title = editText.getText().toString();
+                    String text = editText_1.getText().toString();
+                    //db 저장
+                    RecyclerItem memo = new RecyclerItem(text,title);
+                    db.memoDao().insert(memo);
+
                     //저장했으니 시작상태로 돌아가야함
                     editText_1.setText(null);
                     editText_1.setVisibility(View.INVISIBLE);
@@ -127,6 +141,9 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
             builder.show();
 
         });
+
+
+
 
         return mainView;
     }
