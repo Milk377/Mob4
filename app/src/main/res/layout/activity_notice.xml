@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="공지사항"
+            android:textColor="#000000"
+            android:textSize="32sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/read_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="줌 메이트는 여러분을 위해 최선을 다합니다.\n\n줌 메이트는 2021년 11월 29일에 베타 서비스를 제공 합니다.\n\n여러분의 소중한 성원에 보답하겠습니다.\n\n우리의 발전을 위하여 많은 아이디어와 사용 후기를 남겨주세요.\n\n줌 메이트를 만들 개발자 일동은 좋은 학점을 1순위로 원합니다.\n\n연말에 최고의 기쁨을 성사해주실 교수님께 먼저 박수를 올립니다.\n\n (국민대학교 모바일프로그래밍 2분반 4팀 일동 A+기원)\n\n"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/check2"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onCheckButtonClicked"
+        android:text="확인"
+        android:textColor="#000000" />
+
+</LinearLayout>

@@ -26,9 +26,15 @@ public class MainActivity extends AppCompatActivity{
 
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private FragmentHome fragmentHome = new FragmentHome();
-    private FragmentStorage fragmentStorage = new FragmentStorage();
-    private FragmentSettings fragmentSettings = new FragmentSettings();
     //
+
+    //BNView로 Main으로 돌아왔을때 Home 아이콘이 선택되어있도록
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationView BNView = findViewById(R.id.navigationView);
+        BNView.setSelectedItemId(R.id.HomeItem);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,7 @@ public class MainActivity extends AppCompatActivity{
         transaction.replace(R.id.frameLayout, fragmentHome).commitAllowingStateLoss();
 
         BottomNavigationView BNView = findViewById(R.id.navigationView);
+        BNView.setSelectedItemId(R.id.HomeItem);
         BNView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
 
 
@@ -62,13 +69,13 @@ public class MainActivity extends AppCompatActivity{
                     break;
 
                 case R.id.StorageItem:
-                    //저장소만 액티비티를 호출하도록
-                    Intent intent = new Intent(getApplicationContext(), StorageActivity.class);
-                    startActivity(intent);
+                    Intent intent_storage = new Intent(getApplicationContext(), StorageActivity.class);
+                    startActivity(intent_storage);
                     break;
 
                 case R.id.SettingItem:
-                    transaction.replace(R.id.frameLayout, fragmentSettings).commitAllowingStateLoss();
+                    Intent intent_setting = new Intent(getApplicationContext(), SettingActivity.class);
+                    startActivity(intent_setting);
                     break;
 
             }

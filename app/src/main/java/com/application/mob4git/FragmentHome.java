@@ -84,19 +84,7 @@ public class FragmentHome extends Fragment implements View.OnTouchListener{
                 //
                 button_horizontal.setY(680);
                 button_vertical.setY(680);
-            }/*else if(v.getY() <0 || v.getY() > height){       //해당부분은 동작안하는거같음
-                if(v.getY() < 0){
-                    v.setY(500);
-                    //
-                    button_horizontal.setY(210);
-                    button_vertical.setY(210);
-                }else{
-                    v.setY(height-500);
-                    //
-                    button_horizontal.setY(height-410);
-                    button_vertical.setY(height-410);
-                }
-            }*/
+            }
         }
         return true;
     }
