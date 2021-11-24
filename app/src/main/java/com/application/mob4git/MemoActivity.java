@@ -37,8 +37,6 @@ public class MemoActivity extends AppCompatActivity {
 
         RecyclerItem detail = getIntent().getParcelableExtra("data");
 
-
-
         key =detail.getKey();
         text = detail.getTextStr();
         title = detail.getTitleStr();
@@ -46,9 +44,6 @@ public class MemoActivity extends AppCompatActivity {
 
         memoTitle.setText(title);
         memoText.setText(text);
-
-
-
 
     }
 

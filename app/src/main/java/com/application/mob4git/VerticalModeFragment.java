@@ -78,7 +78,7 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
         webSettings.setJavaScriptEnabled(true);
 
         //예시 url 현재로서는 zoom의 홈페이지 혹은 로그인공간? 같은곳을 설정해야 할까 고민
-        webView.loadUrl("https://www.youtube.com");
+        webView.loadUrl("https://www.google.co.kr/");
 
         //divider에 터치기능을 추가하고 제일 앞으로 이동시킴
         divider.setOnTouchListener(this);

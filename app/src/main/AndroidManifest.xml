@@ -30,8 +30,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".SettingActivity"/>
+        <activity android:name=".Policy_dialog"/>
+        <activity android:name=".Activity_language"/>
+        <activity android:name=".Activity_notice"/>
+        <activity android:name=".Activity_set"/>
+        <activity android:name=".Activity_version"/>
+        <activity android:name=".Activity_sendmail"/>
         <activity android:name=".StorageActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/StorageTheme"/>
         <activity android:name=".MemoActivity"
             android:theme="@style/Theme.AppCompat.Light"/>
     </application>
