@@ -10,4 +10,8 @@
     <color name="zoommate_maincolor">#333399</color>
     <color name="zoommate_selectedcolor">#3153B0</color>
     <color name="orange">#E67E22</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
 </resources>

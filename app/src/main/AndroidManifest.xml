@@ -24,6 +24,7 @@
 
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme"
@@ -33,6 +34,29 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".PaintActivity"
+            android:exported="true">
+
+        </activity>
+
+
+        <activity
+            android:name=".ColorPaletteDialog"
+            android:theme="@android:style/Theme.Dialog"
+            >
+        </activity>
+
+        <activity
+            android:name=".PenPaletteDialog"
+            android:theme="@android:style/Theme.Dialog"
+            >
+        </activity>
+
+
+
+
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.application.mob4git;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -67,12 +68,16 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
         editText_1 = mainView.findViewById(R.id.editText_1);
         saveMemo = mainView.findViewById(R.id.SaveMemo);
 
+
+        //
+
         //webView 설정들
         webView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
         //예시 url 현재로서는 zoom의 홈페이지 혹은 로그인공간? 같은곳을 설정해야 할까 고민
+        // 웹뷰에서 load하는
         webView.loadUrl("https://www.youtube.com");
 
         //divider에 터치기능을 추가하고 제일 앞으로 이동시킴
@@ -90,6 +95,12 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
             button_2.setVisibility(View.INVISIBLE);
             button_3.setVisibility(View.INVISIBLE);
 
+        });
+
+        button_2.setOnClickListener(view -> {
+
+            Intent intent = new Intent(getActivity(), PaintActivity.class);
+            startActivity(intent);
         });
 
         //저장 아이콘을 클릭했을때, 제목을 입력하라는 메시지창 생성
