@@ -73,6 +73,9 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
         saveMemo = mainView.findViewById(R.id.SaveMemo);
         backMemo = mainView.findViewById(R.id.BackMemo);
 
+
+        //
+
         //webView 설정들
         webView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView.getSettings();
@@ -80,6 +83,7 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
 
         //예시 url 현재로서는 zoom의 홈페이지 혹은 로그인공간? 같은곳을 설정해야 할까 고민
         webView.loadUrl("https://www.google.co.kr/");
+
 
         //divider에 터치기능을 추가하고 제일 앞으로 이동시킴
         divider.setOnTouchListener(this);
@@ -99,9 +103,16 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
 
         });
 
+
         //뒤로가기 누르면 다시 기능선택화면
         backMemo.setOnClickListener(view -> {
             setInvisible();
+
+        button_2.setOnClickListener(view -> {
+
+            Intent intent = new Intent(getActivity(), PaintActivity.class);
+            startActivity(intent);
+
         });
 
         //저장 아이콘을 클릭했을때, 제목을 입력하라는 메시지창 생성
