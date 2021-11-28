@@ -26,11 +26,6 @@ import androidx.fragment.app.Fragment;
 /*
 이 프래그먼트에서 세로모드 기능들을 수행하고 저장이 끝나면 다시 이 프래그먼트 첫화면으로 돌아와야 한다
 
--> 프래그먼트에서 프래그먼트를 호출하는데 에서 스스로가 스스로를 호출하게끔 하면 첫화면으로 돌아갈 거 라고 생각함
- 추후 테스트 해봐야함
-
--> 미리 필요한 텍스트뷰를 쓸 수도 있지만, 상황에 따라 동적으로 생성이 필요할 때도 있음
- visible속성을 이용하면될거로 생각
  */
 
 public class VerticalModeFragment extends Fragment implements View.OnTouchListener{
@@ -40,8 +35,7 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
     float oldYvalue;
 
 
-    // 세로모드의 기능 1, 2, 3을 임시로 표현한 것으로 나중에 id와함께 변경해줘야 한다
-    // webView도 일단은 생각이 나지않기 때문에 zoom의 홈페이지를 시작점으로 주고 연결시키게끔? 하는걸 생각 현재의 url은 그냥 예시일뿐
+    //기능버튼 1,2,3
     Button button_1;
     Button button_2;
     Button button_3;
@@ -81,7 +75,6 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        //예시 url 현재로서는 zoom의 홈페이지 혹은 로그인공간? 같은곳을 설정해야 할까 고민
         webView.loadUrl("https://www.google.co.kr/");
 
 
@@ -106,7 +99,8 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
 
         //뒤로가기 누르면 다시 기능선택화면
         backMemo.setOnClickListener(view -> {
-            setInvisible();
+                    setInvisible();
+        });
 
         button_2.setOnClickListener(view -> {
 
