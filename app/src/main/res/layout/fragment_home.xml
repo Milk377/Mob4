@@ -17,9 +17,9 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="345dp"
         android:layout_marginEnd="1dp"
-        android:background="#CC000000" />
+        android:background="#333399" />
 
-    <Button
+    <ImageView
         android:id="@+id/button_horizontal"
         android:layout_width="110dp"
         android:layout_height="110dp"
@@ -28,9 +28,11 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="60dp"
-        android:text="가로" />
+        android:text="가로"
+        app:srcCompat="@drawable/ic_horizontal" />
 
-    <Button
+
+    <ImageView
         android:id="@+id/button_vertical"
         android:layout_width="110dp"
         android:layout_height="110dp"
@@ -38,7 +40,61 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="60dp"
         android:layout_marginTop="60dp"
-        android:text="세로" />
+        android:text="세로"
+        app:srcCompat="@drawable/ic_vertical" />
+
+    <TextView
+        android:id="@+id/myImageViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/button_vertical"
+        android:layout_alignTop="@id/button_vertical"
+        android:layout_alignRight="@id/button_vertical"
+        android:layout_alignBottom="@id/button_vertical"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="가로"
+        android:textColor="#333399" />
+
+    <TextView
+        android:id="@+id/modeselect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:fontFamily="casual"
+        android:text="가로 / 세로 모드 선택 "
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="438dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/zoommatelogo" />
+
+    <TextView
+        android:id="@+id/myImageViewText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/button_horizontal"
+        android:layout_alignTop="@id/button_horizontal"
+        android:layout_alignRight="@id/button_horizontal"
+        android:layout_alignBottom="@id/button_horizontal"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="세로"
+        android:textColor="#333399" />
 
 
 </RelativeLayout>
