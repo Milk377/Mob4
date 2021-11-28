@@ -40,7 +40,7 @@
         <activity android:name=".StorageActivity"
             android:theme="@style/StorageTheme"/>
         <activity android:name=".MemoActivity"
-            android:theme="@style/Theme.AppCompat.Light"/>
+            android:theme="@style/MemoTheme"/>
     </application>
 
 </manifest>

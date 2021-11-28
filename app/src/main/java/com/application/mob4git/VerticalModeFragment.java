@@ -48,6 +48,7 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
     WebView webView;
     EditText editText_1;
     ImageView saveMemo;
+    ImageView backMemo;
 
     private AppDatabase db;
 
@@ -70,7 +71,7 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
         webView = mainView.findViewById(R.id.webView);
         editText_1 = mainView.findViewById(R.id.editText_1);
         saveMemo = mainView.findViewById(R.id.SaveMemo);
-
+        backMemo = mainView.findViewById(R.id.BackMemo);
 
         //webView 설정들
         webView.setWebViewClient(new WebViewClient());
@@ -91,13 +92,16 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
         button_1.setOnClickListener(view ->{
             editText_1.setVisibility(View.VISIBLE);
             saveMemo.setVisibility(View.VISIBLE);
-
-            // 나중에 함수로 뺄거 - 속성값을 정수로정해줘서넘기는식 속성값은 현재 메모를하려고 하는상황인지,
-            // 메모가끝나서 세로모드의첫화면으로 돌아가는상황인지 메모를하려고하는 상황이면 ex) 1을 인자로전달 -> 버튼 invisible 아니라면 2전달 -> 버튼 visible
+            backMemo.setVisibility(View.VISIBLE);
             button_1.setVisibility(View.INVISIBLE);
             button_2.setVisibility(View.INVISIBLE);
             button_3.setVisibility(View.INVISIBLE);
 
+        });
+
+        //뒤로가기 누르면 다시 기능선택화면
+        backMemo.setOnClickListener(view -> {
+            setInvisible();
         });
 
         //저장 아이콘을 클릭했을때, 제목을 입력하라는 메시지창 생성
@@ -120,12 +124,7 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
                     db.memoDao().insert(memo);
 
                     //저장했으니 시작상태로 돌아가야함
-                    editText_1.setText(null);
-                    editText_1.setVisibility(View.INVISIBLE);
-                    button_1.setVisibility(View.VISIBLE);
-                    button_2.setVisibility(View.VISIBLE);
-                    button_3.setVisibility(View.VISIBLE);
-                    saveMemo.setVisibility(View.INVISIBLE);
+                    setInvisible();
 
                     dialog.dismiss();
                 }
@@ -163,6 +162,8 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
             button_3.setY(event.getRawY() - (oldYvalue-180+v.getHeight()));
             editText_1.setY(event.getRawY() - (oldYvalue-180+v.getHeight()));
             saveMemo.setY(event.getRawY() - (oldYvalue-70+v.getHeight()));
+            backMemo.setY(event.getRawY() - (oldYvalue-70+v.getHeight()));
+
         }else if(event.getAction() == MotionEvent.ACTION_UP){       //뷰에서 손을 뗀 순간   여기는 뷰를 제약범위 외에의 이동을시켰을 시 정해진 위치로 강제 이동시키는 기능
             if(v.getY() > height-500){
                 v.setY(height-500);
@@ -172,6 +173,7 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
                 button_3.setY(height-320);
                 editText_1.setY(height-320);
                 saveMemo.setY(height-440);
+                backMemo.setY(height-440);
             }else if(v.getY() <500){
                 v.setY(500);
                 //
@@ -180,9 +182,20 @@ public class VerticalModeFragment extends Fragment implements View.OnTouchListen
                 button_3.setY(680);
                 editText_1.setY(680);
                 saveMemo.setY(560);
+                backMemo.setY(560);
             }
         }
         return true;
+    }
+
+    private void setInvisible(){
+        editText_1.setText(null);
+        editText_1.setVisibility(View.INVISIBLE);
+        button_1.setVisibility(View.VISIBLE);
+        button_2.setVisibility(View.VISIBLE);
+        button_3.setVisibility(View.VISIBLE);
+        saveMemo.setVisibility(View.INVISIBLE);
+        backMemo.setVisibility(View.INVISIBLE);
     }
 
 

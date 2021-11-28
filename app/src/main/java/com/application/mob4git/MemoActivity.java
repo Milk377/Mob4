@@ -14,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import com.application.mob4git.AppDatabase;
+import com.application.mob4git.RecyclerItem;
 
 public class MemoActivity extends AppCompatActivity {
 
@@ -24,6 +26,7 @@ public class MemoActivity extends AppCompatActivity {
     private int key;
     private String text;
     private String title;
+    private RecyclerItem detail;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
@@ -35,7 +38,8 @@ public class MemoActivity extends AppCompatActivity {
         memoText = findViewById(R.id.memoText);
         db = AppDatabase.getInstance(this);
 
-        RecyclerItem detail = getIntent().getParcelableExtra("data");
+        //RecyclerItem
+        detail = getIntent().getParcelableExtra("data");
 
         key =detail.getKey();
         text = detail.getTextStr();
@@ -80,8 +84,27 @@ public class MemoActivity extends AppCompatActivity {
                 builder.show();
 
                 break;
-                //지울까 고민중
+
             case R.id.delete:
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+                builder2.setTitle("작성한 메모를 삭제합니까?.");
+
+                builder2.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        db.memoDao().delete(detail);
+                        Toast.makeText(getApplicationContext(), "삭제되었습니다", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                });
+
+                builder2.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder2.show();
 
                 break;
         }

@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:elevation="8dp"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
         android:src="@drawable/zoommatelogo"
         android:visibility="invisible" />
 </androidx.constraintlayout.widget.ConstraintLayout>
