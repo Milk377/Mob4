@@ -8,4 +8,16 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="StorageTheme" parent ="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/zoommate_maincolor</item>
+        <item name="colorPrimaryDark">@color/zoommate_maincolor</item>
+    </style>
+
+    <style name="MemoTheme" parent ="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/zoommate_maincolor</item>
+        <item name="colorPrimaryDark">@color/zoommate_maincolor</item>
+    </style>
+
+
 </resources>

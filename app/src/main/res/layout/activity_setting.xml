@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#333399"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".SettingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,11 +15,10 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:paddingStart="40sp"
-            android:paddingTop="40sp"
+            android:paddingTop="20sp"
             android:text="설정"
             android:textColor="#FFFFFF"
             android:textSize="25sp" />
@@ -26,7 +26,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="533dp"
+        android:layout_height="541dp"
         android:orientation="vertical">
 
         <TextView
@@ -34,18 +34,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
             android:text="앱"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/Languagebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="18dp"
             android:background="#333399"
+            android:onClick="onCheckButtonClicked"
             app:srcCompat="@drawable/language"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -56,12 +56,13 @@
             app:srcCompat="@drawable/underbar" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/Appsetbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="18dp"
             android:background="#333399"
+            android:onClick="onCheckButtonClicked"
             app:srcCompat="@drawable/appset"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -76,18 +77,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:text="고객센터"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/Noticebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="18dp"
             android:background="#333399"
+            android:onClick="onCheckButtonClicked"
             app:srcCompat="@drawable/notice"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -98,12 +100,13 @@
             app:srcCompat="@drawable/underbar" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
+            android:id="@+id/Versionbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="18dp"
             android:background="#333399"
+            android:onClick="onCheckButtonClicked"
             app:srcCompat="@drawable/versioninform"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -114,12 +117,13 @@
             app:srcCompat="@drawable/underbar" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/policy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="18dp"
             android:background="#333399"
+            android:onClick="onCheckButtonClicked"
             app:srcCompat="@drawable/service"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -130,12 +134,13 @@
             app:srcCompat="@drawable/underbar" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/Sendmailbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="8dp"
             android:background="#333399"
+            android:onClick="onCheckButtonClicked"
             app:srcCompat="@drawable/send"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -147,45 +152,17 @@
 
     </LinearLayout>
 
-    <!-- 이부분도 없어도될거같습니다. 프레임워크안에 들어갈내용만 있으면되고 홈,저장소,설정 화면은 이미 나오고있을겁니다.
-    <LinearLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_weight="1"
-            android:background="#333399"
-            android:text="홈" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="3dp"
-            android:layout_marginBottom="2dp"
-            android:layout_weight="1"
-            android:background="#333399"
-            android:text="저장소" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_weight="1"
-            android:background="#333399"
-            android:text="설정" />
-    </LinearLayout>
-    -->
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:itemBackground="@color/zoommate_maincolor"
+        app:itemIconTint="@drawable/menu_selector_color"
+        app:itemTextColor="@drawable/menu_selector_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:menu="@menu/menu_bottomnavigationview" />
 </LinearLayout>
+

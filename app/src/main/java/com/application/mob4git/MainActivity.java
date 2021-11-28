@@ -23,15 +23,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity{
 
-    //zoom 실행시키는 변수들
-    private Intent intent;
-    private final String zoomPackage = "us.zoom.videomeetings";
 
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private FragmentHome fragmentHome = new FragmentHome();
-    private FragmentStorage fragmentStorage = new FragmentStorage();
-    private FragmentSettings fragmentSettings = new FragmentSettings();
     //
+
+    //BNView로 Main으로 돌아왔을때 Home 아이콘이 선택되어있도록
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationView BNView = findViewById(R.id.navigationView);
+        BNView.setSelectedItemId(R.id.HomeItem);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,19 +47,10 @@ public class MainActivity extends AppCompatActivity{
         transaction.replace(R.id.frameLayout, fragmentHome).commitAllowingStateLoss();
 
         BottomNavigationView BNView = findViewById(R.id.navigationView);
+        BNView.setSelectedItemId(R.id.HomeItem);
         BNView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
 
-        /* 버튼을 누르면 zoom을 실행시키는 기능이었으나 zoommate 어플 내에서 켜지는게 아닌 새로운 zoom어플로서 켜지기때문에 x
-        intent = this.getPackageManager().getLaunchIntentForPackage(zoomPackage);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        Button button = (Button) findViewById(R.id.zoom_start);
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                MainActivity.this.startActivity(intent);
-            }
-        });
-        */
+
     }
     //Fragment 내부에서 Fragment를 전환할 때 사용할 메소드
     public void replaceFragment(Fragment fragment){
@@ -75,14 +69,18 @@ public class MainActivity extends AppCompatActivity{
                     break;
 
                 case R.id.StorageItem:
-                    transaction.replace(R.id.frameLayout, fragmentStorage).commitAllowingStateLoss();
+                    Intent intent_storage = new Intent(getApplicationContext(), StorageActivity.class);
+                    startActivity(intent_storage);
                     break;
 
                 case R.id.SettingItem:
-                    transaction.replace(R.id.frameLayout, fragmentSettings).commitAllowingStateLoss();
+                    Intent intent_setting = new Intent(getApplicationContext(), SettingActivity.class);
+                    startActivity(intent_setting);
                     break;
+
             }
             return true;
         }
     }
+
 }

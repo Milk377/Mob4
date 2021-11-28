@@ -19,22 +19,26 @@
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigationView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="parent"
-            app:menu="@menu/menu_bottomnavigationview"/>
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+
+        app:itemIconTint="@drawable/menu_selector_color"
+        app:itemTextColor="@drawable/menu_selector_color"
+        app:itemBackground="@color/zoommate_maincolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:menu="@menu/menu_bottomnavigationview" />
 
     <ImageView
         android:id="@+id/ImageView_Logo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:elevation="8dp"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
         android:src="@drawable/zoommatelogo"
         android:visibility="invisible" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--- 26, 27, 28번 라인 수정하였습니다. -->

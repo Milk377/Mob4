@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:text="1. 개인정보의 처리 목적\n본 어플리케이션에서 개인정보는 회원정보 기록하고 조회하기 위하여 처리됩니다.\n\n2. 개인정보의 처리 및 보유 기간\n본 어플리케이션에서 개인정보는 제3자에게 제공되지 않습니다\n\n"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/Check"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onCheckButtonClicked"
+        android:text="확인"
+        android:textColor="#000000" />
+
+</LinearLayout>
